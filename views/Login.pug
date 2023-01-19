@@ -1,0 +1,55 @@
+extends layout 
+
+block content
+  head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title TeacherFinder
+  link(rel='stylesheet' href='../css/style.css')
+  script(defer='' src='../JS/JavaScript.js')
+  .mainGrid
+  header
+    .container
+      h2.company
+        | Welcome &#x1F591;
+  #form1.form
+    #form_container.form_container
+      #title_book.title_container
+        h1
+          img.logo(src='/photos/book.png')
+          |  TeacherFinder &copy;
+      .row.clearfix
+        form(action='/test' name='login' onsubmit='return validateLogin()' type='submit')
+          div
+            input.input(type='email' name='email' placeholder='Email' required='')
+          div
+            input#password.input(type='password' name='password' placeholder='Password' required='')
+            br
+          input#checkboxP(type='checkbox' style='width: 15px; vertical-align: bottom; text-align: center;\
+          *overflow: hidden;' onclick='ShowPassfunction()')
+          label.Show(style='color: white;') Show Password
+          br
+          div 
+            button.ButtonSignup(formaction='Signup.html')
+              span.button__text
+              a(style='color: #fcfcfc' href='Signup.html') Sign Up
+            button.ButtonLogin(onclick='/test' )
+            //- formaction='HomePage.html'
+              span.button__text Log In
+          br
+          br
+          img.teacher(src='/photos/teacher.png')
+          form#Login(action="http://localhost:3001/Login")
+        h1#titel  #{var1} 
+        table.styled-table
+            thead
+                tr
+                    th Name
+                 
+
+            each n in pple
+                tr
+                td= n.fullname 
+              
+          

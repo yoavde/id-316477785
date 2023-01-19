@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeacherFinder</title>
+    <link rel='stylesheet' href='../static/Style.css'>
+    <script defer src="../Static/JavaScript.js"></script>
+</head>
+<body class="body">
+    <div class="mainGrid">
+      <nav>
+        <ul>
+        <img src="../Photos/logo1.png" class="logo1">
+            <h4 id="1"> TeacherFinder ©</h4>
+                <a href="Login.html">Login❀</a>
+        </ul>
+      </nav>
+        <div class="form" id="form1">
+            <div class="form_container" id="form_container">
+                <div class="title_container" id="title_book">
+                    <b>🢧 Sign-Up 🢦</b>
+                </div>
+                <div class="row clearfix">
+                    <form name="signup" onsubmit="return validateSignup()" method="post" type="submit">
+                        <div>
+                            <input class="input" type="email" name="Email" placeholder="Email" required />
+                        </div>
+                        <div>
+                            <input class="input" type="text" name="Full Name" placeholder="Full Name" required />
+                        </div>
+                        <div>
+                            <input class="input" type="password" id="Password" name="Password" placeholder="Password" required onkeyup='Check();' />
+                        </div>
+                        <span  id='message'></span>
+                        <div>
+                            <input class="input" type="password" id="Re-type Password" name="Re-type Password" placeholder="Re-type Password" required onkeyup='Check();' />
+                        </div>
+                          <button class="ButtonLogin" type="submit" formaction="ChooseProfile.html">
+                                Create Account ☑
+                            </button>
+                        <div> <br>
+                        </div>
+                        <img src="../Photos/teacher.png" class="teacher">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

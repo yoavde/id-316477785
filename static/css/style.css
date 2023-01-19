@@ -1,0 +1,439 @@
+.body{
+    background-color: #576CB5;
+    font-family: Arial;
+}
+
+#form1{
+    margin-left: 9vw;
+    margin-right: 9vw;
+    text-align: center;
+}
+
+#form_container{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 70vw;
+}
+
+#title_book{
+    display: inline-block;
+    width: 50vw;
+}
+
+/*----------Headers------------*/
+
+h1 {
+    color: white;
+    width: 100%;
+    text-align: left;
+    margin-left: 13vw;
+    text-shadow: 1.5px 1.5px 8px#000000;
+}
+
+h2 {
+    font-size: medium;
+    color: white;
+    text-align: center;
+    font-weight: 1;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    font-weight: 1;
+}
+
+h4 {
+    color: #576CB5;
+    width: 100%;
+    text-align: left;
+    margin-left: 2vh;
+}
+
+h5 {
+    color: #576CB5;
+    width: 100%;
+    text-align: left;
+    margin-right: 50px;
+}
+
+/*----------Buttons Design------------*/
+
+.ButtonLogin{
+    margin-top: 20px;
+    border-radius: 40px;
+    width: 190px;
+    height: 25px;
+    background-color: #001E89;
+    color: whitesmoke;
+    padding: 3px 2px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.ButtonSignup{
+    margin-top: 20px;
+    border-radius: 40px;
+    width: 190px;
+    height: 25px;
+    background-color: #576CB5;
+    color: whitesmoke;
+    padding: 3px 2px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.ButtonMenu{
+    margin-top: 20px;
+    border-radius: 40px;
+    width: 380px;
+    height: 40px;
+    background-color: #001E89;
+    color: whitesmoke;
+    padding: 3px 2px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.ButtonChoose{
+    margin-top: 20px;
+    border-radius: 40px;
+    width: 140px;
+    height: 40px;
+    background-color: #001E89;
+    color: whitesmoke;
+    padding: 3px 2px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.input {
+    width: 40%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    border-bottom: 2px solid gray;
+    height: 8px;
+    background: white;
+    border-radius: 10px;
+}
+
+
+/*----------PhotosDesign------------*/
+
+.teacher{
+    width: 28vw;
+    height: 28vh;
+    margin-right: 10px;
+
+}
+.teacher:hover{
+    animation: rotation 0.6s linear;
+}
+
+.logo{
+    width: 4vw;
+    height: 7vh;
+    box-shadow: 1px 1px 6px#000000;
+}
+
+.logo1{
+    width: 4vw;
+    height: 6vh;
+    box-shadow: 1px 1px 6px#000000;
+}
+
+.homepage{
+    width: 15vw;
+    height: 30vh;
+}
+
+.search{
+    width: 15vw;
+    height: 30vh;
+}
+
+.teacher1{
+    width: 10vw;
+    height: 30vh;
+}
+.student{
+    width: 10vw;
+    height: 30vh;
+}
+
+/*----------Animation------------*/
+
+@keyframes rotation{
+    60%{
+        transform: rotateX(90deg);
+    }
+    20%{
+         transform: rotateY(60deg);
+    }
+    30%{
+         transform: rotateZ(5deg);
+    }
+}
+
+/*----------BoldFont------------*/
+
+b{
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+/*----------Flex------------*/
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    background-color: #576CB5;
+    border-radius: 10px;
+    justify-content: center;
+
+}
+
+.flex-container > div {
+    background-color: cornflowerblue;
+    width: 150px;
+    margin: 40px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+.flex-containerSearch {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: nowrap;
+    background-color: #576CB5;
+    border-radius: 10px;
+    justify-content: center;
+
+}
+
+.flex-containerSearch > div {
+    background-color: cornflowerblue;
+    width: 800px;
+    margin: 40px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+/*----------Lists Design------------*/
+
+li{
+    color: white;
+    text-align: left;
+    font-weight: lighter;
+    font-size: 20px;
+    padding-left: 1vw;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+    height: 35px;
+    background-color: white;
+}
+
+ol{
+    padding-left: 10vw;
+}
+
+select{
+     margin-top: 20px;
+    border-radius: 10px;
+    width: 390px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    padding: 3px 2px;
+    font-weight: bold;
+    border: 10px;
+}
+
+/*----------Slider Design------------*/
+
+.slider {
+position: absolute;
+left: 49.5%;
+transform: translate(-50%,-50%);
+width: 333px;
+height: 10px;
+padding: 15px;
+padding-left: 40px;
+background: #fcfcfc;
+border-radius: 10px;
+display: flex;
+align-items: center;
+}
+
+.slider p {
+font-size: 26px;
+font-weight: 600;
+font-family: Open Sans;
+padding-left: 30px;
+color: black;
+}
+
+.slider input[type="range"] {
+-webkit-appearance:none;
+width: 420px;
+height: 2px;
+background: black;
+border: none;
+outline: none;
+}
+
+.slider input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: none;
+width: 20px;
+height:20px;
+background: black;
+border: 2px solid black;
+border-radius: 50%;
+cursor: pointer;
+}
+
+.slider input[type="range"]::-webkit-slider-thumb:hover {
+background: black;
+}
+
+/*----------Link------------*/
+
+a{
+    color: #001E89;
+    padding-left: 2vh;
+    font-weight: bold;
+}
+
+/*----------StarsRate------------*/
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+    margin-left: 25px;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.rate1 {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate1:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate1:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+    margin-left: 25px;
+}
+.rate1:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate1 > input:checked ~ label {
+    color: #ffc700;
+}
+.rate1:not(:checked) > label:hover,
+.rate1:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate1 > input:checked + label:hover,
+.rate1 > input:checked + label:hover ~ label,
+.rate1 > input:checked ~ label:hover,
+.rate1 > input:checked ~ label:hover ~ label,
+.rate1 > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+.rate2 {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate2:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate2:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+    margin-left: 25px;
+}
+.rate2:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate2 > input:checked ~ label {
+    color: #ffc700;
+}
+.rate2:not(:checked) > label:hover,
+.rate2:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate2 > input:checked + label:hover,
+.rate2 > input:checked + label:hover ~ label,
+.rate2 > input:checked ~ label:hover,
+.rate2 > input:checked ~ label:hover ~ label,
+.rate2 > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
