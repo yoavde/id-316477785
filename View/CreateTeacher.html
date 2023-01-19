@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeacherFinder</title>
+    <link rel='stylesheet' href='style.css'>
+     <script defer src="JavaScript.js"></script>
+</head>
+<body class="body">
+    <div class="mainGrid">
+      <nav>
+        <ul>
+        <img src="logo1.png" class="logo1">
+            <h4 id="1"> TeacherFinder ©</h4>
+            <a href="Login.html">Login❀</a>
+            <a href="ChooseProfile.html">Back⮌</a>
+        </ul>
+      </nav>
+        <div class="form" id="form1">
+            <div class="form_container" id="form_container">
+                <div class="title_container" id="title_book">
+                    <b>Create Profile: Teacher</b>
+                </div>
+                <div class="row clearfix">
+                    <form name="createTeacher" onsubmit="return validateCreateTeacher()" method="post" type="submit">
+                        <select id="Subjects" list="Subjects" name="Subjects" placeholder="Choose Subject" ><br>
+                                           <option value="Biology">Biology</option>
+                                           <option value="Chemistry">Chemistry</option>
+                                           <option value="Civics">Civics</option>
+                                           <option value="Economy">Economy</option>
+                                           <option value="English">English</option>
+                                           <option value="Hebrew Language">Hebrew Language</option>
+                                           <option value="History">History</option>
+                                           <option value="Literature">Literature</option>
+                                           <option value="Math">Math</option>
+                                           <option value="Physics">Physics</option>
+                                               </select> <div style="padding-bottom: 20px"> </div>
+                        <div>
+                            <input class="input" type="text" name="city" placeholder="City" required />
+                        </div>
+                        <div>
+                            <input class="input" type="number" name="years of experience" placeholder="Years of experience" required />
+                        </div>
+                        <div>
+                            <input class="input" type="number" name="price per hour" placeholder="Price per hour" required />
+                        </div>
+                        <div>
+                            <input class="input" type="number" name="phone Number" placeholder="Phone Number" required />
+                        </div>
+                        <div>
+                            <button class="ButtonLogin" formaction="HomePage.html">
+                                Continue
+                            </button>
+                        </div>
+                        <div>
+                        </div>
+                        <br><img src="teacher.png" class="teacher">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

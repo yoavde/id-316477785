@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeacherFinder</title>
     <link rel='stylesheet' href='style.css'>
+    <script defer src="JavaScript.js"></script>
 </head>
 <body class="body">
     <div class="mainGrid">
@@ -19,7 +20,7 @@
         <div class="form" id="form1">
             <div class="form_container" id="form_container">
                 <div class="title_container" id="title_book">
-                    <h1><img src="book.png" class="logo"> TeacherFinder</h1>
+                    <h1><img src="book.png" class="logo"> TeacherFinder ©</h1>
 
                 </div>
                 <div class="row clearfix">
@@ -28,23 +29,18 @@
                             <input class="input" type="email" name="email" placeholder="Email" required />
                         </div>
                         <div>
-                            <input class="input" type="password" name="password" placeholder="Password" required />
+                            <input class="input" type="password" name="password" id="password" placeholder="Password" required> <br>
                         </div>
+                        <input type="checkbox" id="checkboxP" style="width: 15px; vertical-align: bottom; text-align: center;
+                        *overflow: hidden;" onclick="ShowPassfunction()"><label class="Show" style="color: white;">Show Password</label><br>
                         <div>
-                            <button class="ButtonSignup">
-                                <span class="button__text">Sign Up</span>
+                            <button formaction="Signup.html" class="ButtonSignup">
+                                <span class="button__text"></span><a style="color: #fcfcfc" href="Signup.html">Sign Up</a>
                             </button>
-                            <button class="ButtonLogin">
+                            <button formaction="HomePage.html" class="ButtonLogin">
                                 <span class="button__text">Log In</span>
                             </button>
-                        </div>
-                        <div>
-                            <h3>
-                                <u>
-                                    Forgot password?
-                                </u>
-                            </h3>
-                        </div>
+                        </div><br><br>
                         <img src="teacher.png" class="teacher">
                     </form>
                 </div>

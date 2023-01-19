@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeacherFinder</title>
+    <link rel='stylesheet' href='../static/Style.css'>
+</head>
+<body class="body">
+    <div class="mainGrid">
+      <nav>
+        <ul>
+        <img src="../Photos/logo1.png" class="logo1">
+            <h4 id="1"> TeacherFinder ©</h4>
+                <a href="HomePage.html">Home♥</a>
+                <a href="MyTeachers.html">MyTeachers★</a>
+                <a href="Login.html">Logout»</a>
+        </ul>
+      </nav>
+        <div class="form" id="form1">
+            <div class="form_container" id="form_container">
+                <div class="title_container" id="title_book">
+                    <b>🢧 Find My Teacher 🢦</b>
+                </div>
+
+                <div class="row clearfix">
+                    <form class="SearchTeacher">
+                        <div>
+                            <input class="input" type="text" name="city" placeholder="City" required/>
+                        </div>
+                    <select id="Subjects" list="Subjects" name="Subjects" placeholder="Choose Subject" ><br>
+                                           <option value="Biology">Biology</option>
+                                           <option value="Chemistry">Chemistry</option>
+                                           <option value="Civics">Civics</option>
+                                           <option value="Economy">Economy</option>
+                                           <option value="English">English</option>
+                                           <option value="Hebrew Language">Hebrew Language</option>
+                                           <option value="History">History</option>
+                                           <option value="Literature">Literature</option>
+                                           <option value="Math">Math</option>
+                                           <option value="Physics">Physics</option>
+                                               </select> <div style="padding-bottom: 20px"> </div>
+                               <div class="rane">
+                                   <div class="range-val" id="range-value-price"></div>
+                               </div> <br><br>
+                               <div class="slider">
+                               <input type="range" min="0" max="200" value="100" oninput="rangeValue.innerText = this.value">
+                               <p id="rangeValue">100</p> ₪ </div> <br><br>
+                        <div>
+                                  <button type="submit" class="ButtonChoose" formaction="SearchResults.html"> Search 🔎
+                                  </button>
+                        </div>
+                        </div><br>
+                        <img src="../Photos/search.png" class="search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
