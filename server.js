@@ -39,6 +39,14 @@ app.get('/test', (req, res)=>{
   res.render('Login');
 });
 
+app.post("/Finduser", CRUD.Finduser);
+app.get('/Finduser', (req, res)=>{
+  res.render('Login');
+});
+// app.get('/user_data', (req, res)=>{
+//   // console.log(res.email);
+//   res.render('Finduser');
+// });
 //  app.get('/Search', (req, res)=>{
 //    res.render('Search'); });
     // app.post('/Search', CRUD.Finduser);

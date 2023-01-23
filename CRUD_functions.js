@@ -16,35 +16,35 @@ const sql = require("./db.js");
 // }
 
 const Finduser = (req, res)=>{
+    // console.log(res);
     if (!req.body) {
         res.status(400).send({message: "serch cannot be empty"});
         return;        
     }
     // const User = req.query.SearchName;
-    var User = req.body.uname;
-    var password=req.body.psw;
-
+    var User = req.body.email;
+    var password=req.body.password;
+    console.log(User);
+    console.log(password);
+    
    
-    sql.query("SELECT * FROM users where (email =? AND pass =?)" , [User,password] , (err, results, fields)=>{
+    sql.query("SELECT * FROM teacherfinder.users where (username =? AND password =?)" , [User,password] , (err, results, fields)=>{
         if (err) {
             console.log("ERROR IS: " + err);
             res.status(400).send("Somthing is wrong with query" + err);
             return;
         }
+        console.log(results);
         if(results.length ==0){
-            res.status(400).render('success', {
-                var1: 'http://localhost:3000/signin',
-                var2: '/photos/cancel.png',
-                var3:"Oops! The user does not exist. Check the email or password.",
-                var4:'Go Back To login Page!'
-           });
-           return;
+            console.log("User not found");
         }
+        else
         console.log("User found");
         // res.send(results);
-        res.render("Search");
+        res.render("Login");
         return;
     } )
+
 }
 
 
