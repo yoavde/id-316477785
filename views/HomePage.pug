@@ -1,0 +1,35 @@
+extends layout 
+
+block content
+  head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title TeacherFinder
+  body.body
+  .mainGrid
+    nav
+      ul
+        img.logo1(src='../Photos/logo1.png')
+        h4#1  TeacherFinder &copy;
+        h5  Hello, Yoav &#x1F591;
+        a(href='Login') Logout&raquo;
+    #form1.form
+      #form_container.form_container
+        #title_book.title_container
+          br
+          b &#x1F8A7; Options Menu &#x1F8A6;
+        .row.clearfix
+          form.login
+            div
+              button.ButtonMenu(formaction='SearchTeachers')
+                | Find My Teacher
+            div
+              button.ButtonMenu(formaction='MyTeachers')
+                | Rate My Teachers
+            div
+              button.ButtonMenu(formaction='ChooseProfile')
+                | Edit Profile
+            div
+            br
+            img.homepage(src='../Photos/homepage.png')

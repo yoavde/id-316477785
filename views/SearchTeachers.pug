@@ -1,0 +1,56 @@
+extends layout 
+
+block content
+
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title TeacherFinder
+    //- link(rel='stylesheet', href='../static/Style.css')
+    body.body
+    .mainGrid
+      nav
+        ul
+          img.logo1(src='../Photos/logo1.png')
+          h4#1  TeacherFinder &copy;
+          a(href='HomePage') Home&hearts;
+          a(href='MyTeachers') MyTeachers&starf;
+          a(href='Login') Logout&raquo;
+      #form1.form
+        #form_container.form_container
+          #title_book.title_container
+            b &#x1F8A7; Find My Teacher &#x1F8A6;
+          .row.clearfix
+            form.SearchTeacher(action='/SearchResults' method='post' type='submit')
+              div
+                input.input(type='text', name='city', placeholder='City', required='')
+              select#Subjects(list='Subjects', name='field', placeholder='Choose Subject')
+                option(value='Biology') Biology
+                option(value='Chemistry') Chemistry
+                option(value='Civics') Civics
+                option(value='Economy') Economy
+                option(value='English') English
+                option(value='Hebrew Language') Hebrew Language
+                option(value='History') History
+                option(value='Literature') Literature
+                option(value='Math') Math
+                option(value='Physics') Physics
+              div(style='padding-bottom: 20px')  
+              .rane
+                #range-value-price.range-val
+              |  
+              br
+              br
+              .slider
+                input(type='range', min='0',name='price' max='200', value='100', oninput='rangeValue.innerText = this.value')
+                p#rangeValue 100
+                |  &#x20AA;
+              |  
+              br
+              br
+              div
+                button.ButtonChoose(type='submit' onclick ='/SearchResults' method="post")
+                  | Search &#x1F50E;
+          br
+          img.search(src='../Photos/search.png')

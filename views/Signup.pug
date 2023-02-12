@@ -1,0 +1,35 @@
+extends layout 
+
+block content
+    head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title TeacherFinder
+    body.body
+    .mainGrid
+      nav
+        ul
+          img.logo1(src='../Photos/logo1.png')
+          h4#1  TeacherFinder &copy;
+          a(href='Login.html') Login&#x2740;
+      #form1.form
+        #form_container.form_container
+          #title_book.title_container
+            b &#x1F8A7; Sign-Up &#x1F8A6;
+          .row.clearfix
+            form(name='signup', onsubmit='return validateSignup()', action='/Signup' method='post', type='submit')
+              div
+                input.input(type='email', name='Email', placeholder='Email', required='')
+              div
+                input.input(type='text', name='FullName', placeholder='FullName', required='')
+              div
+                input#Password.input(type='password', name='Password', placeholder='Password', required='', onkeyup='Check();')
+              span#message
+              div
+                input.input(type='password', id='Re-type Password', name='Re-type Password', placeholder='Re-type Password', required='', onkeyup='Check();')
+              button.ButtonLogin(type='submit' onclick ='/HomePage' method="post")
+                | Create Account &#x2611;
+              div
+                br
+              img.teacher(src='../Photos/teacher.png')

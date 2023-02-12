@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeacherFinder</title>
+    <link rel='stylesheet' href='../static/css/style.css'>
+    <script defer src="../static/JavaScript.js"></script>
+</head>
+<body class="body">
+    <div class="mainGrid">
+        <header>
+            <div class="container">
+                <h2 class="company">
+                    Welcome 🖑
+                </h2>
+            </div>
+        </header>
+        <div class="form" id="form1">
+            <div class="form_container" id="form_container">
+                <div class="title_container" id="title_book">
+                    <h1><img src="../static/Photos/book.png" class="logo"> TeacherFinder ©</h1>
+                </div>
+                <div class="row clearfix">
+                    <form name="login" onsubmit="return validateLogin()" method="post" type="submit">
+                        <div>
+                            <input class="input" type="email" name="email" placeholder="Email" required />
+                        </div>
+                        <div>
+                            <input class="input" type="password" name="password" id="password" placeholder="Password" required> <br>
+                        </div>
+                        <input type="checkbox" id="checkboxP" style="width: 15px; vertical-align: bottom; text-align: center;
+                        *overflow: hidden;" onclick="ShowPassfunction()"><label class="Show" style="color: white;">Show Password</label><br>
+                        <div>
+                            <button formaction="Signup.html" class="ButtonSignup">
+                                <span class="button__text"></span><a style="color: #fcfcfc" href="Signup.html">Sign Up</a>
+                            </button>
+                            <button formaction="HomePage.html" class="ButtonLogin">
+                                <span class="button__text">Log In</span>
+                            </button>
+                        </div><br><br>
+                        <img src="../static/Photos/teacher.png" class="teacher">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

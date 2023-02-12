@@ -1,0 +1,42 @@
+extends layout 
+
+block content
+    head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title TeacherFinder
+    body.body
+    .mainGrid
+        nav
+            ul
+            img.logo1(src='../Photos/logo1.png')
+            h4#1  TeacherFinder &copy;
+            a(href='HomePage') Home&hearts;
+            a(href='/SearchTeachers') Search&#x2611;
+            a(href='MyTeachers') MyTeachers&starf;
+            a(href='Login') Logout&raquo;
+        #form1.form
+            #form_container.form_container
+            #title_book.title_container
+                b &#x1F8A7; Search Results &#x1F8A6;
+            .flex-containerSearch
+               table.styled-table
+                    thead
+                         tr
+                             th Name
+                             th price
+                             th city
+                             th field
+                    
+
+                    each n in teachers_arr 
+                        tr
+                              td= n.fullname 
+                              td= n.price
+                              td= n.city
+                              td= n.field
+              
+                  
+        //-    div
+

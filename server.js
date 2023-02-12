@@ -7,9 +7,11 @@ var path = require('path');
 
 const sql = require("./db");
 const CRUD= require('./CRUD_functions.js');
-// const DBCreation = require('./dataCreationDB');
+ const DBCreation = require('./Dbcreate.js');
 const fs = require('fs');
-//  const stringify = require('csv-stringify').stringify;
+  //  const stringify = require('csv-stringify').stringify;
+  //  const { parse } = require("csv-parse");
+// const CSVToJSON = require('csvtojson');
 const start =function(req,res){
     res.render('Login');
 }
@@ -28,7 +30,8 @@ app.set('view engine', 'pug');
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-app.get('/',  start);
+app.get('/', [ DBCreation.CreateUsers, DBCreation.CreateTeachers,start]);
+
 
 
 // app.get('/test', (req, res) => {
@@ -38,9 +41,37 @@ app.get("/test", CRUD.test);
 app.get('/test', (req, res)=>{
   res.render('Login');
 });
+app.get('/HomePage', (req, res)=>{
+  res.render('HomePage');
+});
+app.post('/HomePage', (req, res)=>{
+  res.render('HomePage');
+});
+app.get('/MyTeachers', (req, res)=>{
+  res.render('MyTeachers');
+});
+// app.post('/MyTeachers', (req, res)=>{
+//   res.render('MyTeachers');
+// });
+app.get('/SearchTeachers', (req, res)=>{
+  res.render('SearchTeachers');
+});
+app.get('/SearchTeachers', (req, res)=>{
+  res.render('SearchTeachers');
+});
+// app.post('/SearchTeachers', CRUD.SearchResults);
+app.get('/Signup', (req, res)=>{
+  res.render('Signup');
+});
+ app.post('/SearchResults', CRUD.SearchResults);
+ app.post('/Signup', CRUD.Signup);
 
-app.post("/Finduser", CRUD.Finduser);
-app.get('/Finduser', (req, res)=>{
+
+
+
+
+app.post("/Login", CRUD.Finduser);
+app.get('/Login', (req, res)=>{
   res.render('Login');
 });
 // app.get('/user_data', (req, res)=>{
