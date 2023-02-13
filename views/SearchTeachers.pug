@@ -15,7 +15,7 @@ block content
           img.logo1(src='../Photos/logo1.png')
           h4#1  TeacherFinder &copy;
           a(href='HomePage') Home&hearts;
-          a(href='MyTeachers') MyTeachers&starf;
+          a(href='edit') Edit&starf;
           a(href='Login') Logout&raquo;
       #form1.form
         #form_container.form_container
@@ -25,7 +25,7 @@ block content
             form.SearchTeacher(action='/SearchResults' method='post' type='submit')
               div
                 input.input(type='text', name='city', placeholder='City', required='')
-              select#Subjects(list='Subjects', name='field', placeholder='Choose Subject')
+              select#Subjects(list='Subjects', name='subject', placeholder='Choose Subject')
                 option(value='Biology') Biology
                 option(value='Chemistry') Chemistry
                 option(value='Civics') Civics

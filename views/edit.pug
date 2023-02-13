@@ -12,15 +12,17 @@ block content
         ul
           img.logo1(src='../Photos/logo1.png')
           h4#1  TeacherFinder &copy;
-          a(href='Login') Login&#x2740;
+             a(href='HomePage') Home&hearts;
+             a(href='edit') Edit&starf;
+             a(href='Login') Logout&raquo;
       #form1.form
         #form_container.form_container
           #title_book.title_container
-            b &#x1F8A7; Sign-Up &#x1F8A6;
+            b &#x1F8A7; Edit Account &#x1F8A6;
           .row.clearfix
-            form(name='signup', onsubmit='return validateSignup()', action='/Signup' method='post', type='submit')
-              div
-                input.input(type='email', name='username', placeholder='Username', required='')
+            form(name='signup', onsubmit='return validateSignup()', action='/edit' method='post', type='submit')
+              //- div
+              //-   input.input(type='email', name='username', placeholder='Username', required='')
               div
                 input.input(type='text', name='fullname', placeholder='fullName', required='')
               div
@@ -29,7 +31,7 @@ block content
               div
                 input.input(type='password', id='Re-type Password', name='Re-type Password', placeholder='Re-type Password', required='', onkeyup='Check();')
               button.ButtonLogin(type='submit' onclick ='/HomePage' method="post")
-                | Create Account &#x2611;
+                | Edit Account &#x2611;
               div
                 br
               img.teacher(src='../Photos/teacher.png')

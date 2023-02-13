@@ -12,7 +12,7 @@ block content
       ul
         img.logo1(src='../Photos/logo1.png')
         h4#1  TeacherFinder &copy;
-        h5  Hello, Yoav &#x1F591;
+        h5  Hello &#x1F591;
         a(href='Login') Logout&raquo;
     #form1.form
       #form_container.form_container
@@ -25,11 +25,12 @@ block content
               button.ButtonMenu(formaction='SearchTeachers')
                 | Find My Teacher
             div
-              button.ButtonMenu(formaction='MyTeachers')
-                | Rate My Teachers
+              button.ButtonMenu(formaction='edit')
+                | Edit profile
+          form.delete(action='/deleteUser' method='post' type='submit')
             div
-              button.ButtonMenu(formaction='ChooseProfile')
-                | Edit Profile
+              button.ButtonMenu( type='submit' onclick ='/deleteUser' method="post" )
+                | Delete Profile
             div
             br
             img.homepage(src='../Photos/homepage.png')

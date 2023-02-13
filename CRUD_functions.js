@@ -4,6 +4,9 @@ const CRUD_operations = require("./CRUD_functions.js");
 
 
 const sql = require("./db.js");
+var user_info;
+let myValue;
+
 // const test = function (req, res) {
 // sql.connect(function(err) {
 //     if (err) throw err;
@@ -16,19 +19,19 @@ const sql = require("./db.js");
 // }
 
 const Finduser = (req, res)=>{
-    // console.log(res);
+
     if (!req.body) {
         res.status(400).send({message: "serch cannot be empty"});
         return;        
     }
-    // const User = req.query.SearchName;
+   
     var User = req.body.email;
     var password=req.body.password;
     console.log(User);
     console.log(password);
     
     
-    sql.query("SELECT * FROM teacherfinder.users where (username =? AND password =?)" , [User,password] , (err, results, fields)=>{
+    sql.query("SELECT * FROM teacherfinder.users where (username =? AND password =?)" , [User,password] , (err, results, req)=>{
         if (err) {
             console.log("ERROR IS: " + err);
             res.status(400).send("Somthing is wrong with query" + err);
@@ -40,15 +43,56 @@ const Finduser = (req, res)=>{
             res.render("Login");
         }
         else{
+            myValue = results;
+            req.session = results
             console.log("User found");
-            // res.send(results);
-            res.render("HomePage");
+            console.log(myValue)
+            res.render("HomePage",{
+                
+                
+          
+            });
+         
         }
-     
+        
+        console.log(req.session)
         return;
     } )
 
 }
+
+const deleteUser = (req, res)=>{
+    // console.log(res);
+    if (!req.body) {
+        res.status(400).send({message: "serch cannot be empty"});
+        return;        
+    }
+ 
+    console.log(myValue);
+    myValue=myValue[0].username;
+   
+    
+    
+    sql.query(`DELETE FROM teacherfinder.users WHERE username = "${myValue}"`) ,(err, results, fields)=>{
+        if (err) {
+            console.log("ERROR IS: " + err);
+            res.status(400).send("Somthing is wrong with query" + err);
+            return;
+        }
+       
+            else{
+                console.log(results);
+                res.render("Login")
+           
+             
+            }
+        
+     
+        return 
+    } 
+    res.render("Login");
+}
+
 
 
 const SearchResults = (req, res)=>{
@@ -78,7 +122,7 @@ const SearchResults = (req, res)=>{
         }
         else{
             console.log("teacher found");
-            // res.send(results);
+         
             res.render("SearchResults",{
                 teachers_arr: results
             });
@@ -90,7 +134,7 @@ const SearchResults = (req, res)=>{
 }
 
 const Signup = function (req, res) {
-    // Validate request
+   
     var date = new Date();
     if (!req.body) {
         res.status(400).send({
@@ -100,8 +144,8 @@ const Signup = function (req, res) {
     }
     const NewUser = {
         "fullname": req.body.fullname,
-        "password": req.body.Password,
-        "username":   date.getMinutes()+date.getSeconds()+date.getMilliseconds()
+        "password": req.body.password,
+        "username":  req.body.username
 
        
     };
@@ -111,12 +155,40 @@ const Signup = function (req, res) {
             res.status(400).send({ message: "error in creating user: " + err });
             return;
         }
-         console.log("created user: ", { id: mysqlres.insertId, ...NewUser });
+         console.log("created user: ", { ...NewUser });
         res.render('HomePage', {
-            var1:  'http://localhost:3000/signin',
-            var2: '/photos/checked.png',
-            var3:"New user created successfully!",
-            var4:'Login with your user!'
+          
+       });
+       return;
+
+    });
+};
+
+const edit = function (req, res) {
+    myValue=myValue[0].username;
+    var date = new Date();
+    if (!req.body) {
+        res.status(400).send({
+            message: "Content can not be empty!"
+        });
+        return;
+    }
+    const NewUser = {
+        "fullname": req.body.fullname,
+        "password": req.body.password,
+        // "username":  req.body.username
+
+       
+    };
+    sql.query(`UPDATE teacherfinder.users SET fullname = "${req.body.fullname}", password = "${req.body.password}" WHERE  username = "${myValue}"`, (err, mysqlres) => {
+        if (err) {
+            console.log("error: ", err);
+            res.status(400).send({ message: "error in creating user: " + err });
+            return;
+        }
+         console.log("edit user: ", { ...NewUser });
+        res.render('HomePage', {
+          
        });
        return;
 
@@ -127,16 +199,12 @@ const Signup = function (req, res) {
 
 
 const test = (req, res) => {
-    // check if body is empty
+
     if (!req.body) {
         res.status(400).send({ message: "content can not be empty" });
         return;
     }
-    //if body not empty - create new tutor
-    // var tutorSub = req.query.subjects;
-    // var tutorGr = req.query.Grade;
-    // console.log(tutorSub, tutorGr);
-    //insert query
+
 
    const sqlq = "SELECT * FROM teacherfinder.teachers";
     console.log(sqlq);
@@ -146,7 +214,7 @@ const test = (req, res) => {
             res.status(400).send({ message: "error in finding tutor " + err });
             return;
         }
-        // if not query error
+      
         console.log(mysqlres);
         res.render('Login', {
             pple: mysqlres
@@ -158,4 +226,4 @@ const test = (req, res) => {
 
 
 
-module.exports = {Finduser,test,SearchResults,Signup};
+module.exports = {Finduser,test,SearchResults,Signup,deleteUser,edit};

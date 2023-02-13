@@ -14,7 +14,6 @@ block content
             h4#1  TeacherFinder &copy;
             a(href='HomePage') Home&hearts;
             a(href='/SearchTeachers') Search&#x2611;
-            a(href='MyTeachers') MyTeachers&starf;
             a(href='Login') Logout&raquo;
         #form1.form
             #form_container.form_container
@@ -27,7 +26,11 @@ block content
                              th Name
                              th price
                              th city
-                             th field
+                             th subject
+                             th tel
+                             th averagerank
+                             th experience
+                            
                     
 
                     each n in teachers_arr 
@@ -35,7 +38,10 @@ block content
                               td= n.fullname 
                               td= n.price
                               td= n.city
-                              td= n.field
+                              td= n.subject
+                              td= n.tel
+                              td= n.averagerank
+                              td= n.experience
               
                   
         //-    div
